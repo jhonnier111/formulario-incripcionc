@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Inscripción a Carrera</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 22px;
+        }
+        label {
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        small {
+            font-size: 12px;
+            color: red;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .col {
+            flex: 1 1 45%;
+        }
+        button {
+            background-color: #d35400;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #e67e22;
+        }
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        .note {
+            color: red;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Formulario de Inscripción a Carrera</h1>
+        <p class="note">* Los campos marcados con asterisco son obligatorios.</p>
+
+        <!-- Apartado de carrera -->
+        <h2>¿En qué carrera desea inscribirse? *</h2>
+        <select id="carrera" required>
+            <option value="">Seleccione una carrera</option>
+            <option>Administración de Empresas</option>
+            <option>Bacteriología</option>
+            <option>Contaduría Pública</option>
+            <option>Derecho</option>
+            <option>Enfermería</option>
+            <option>Ingeniería de Sistemas</option>
+            <option>Instrumentación Quirúrgica</option>
+            <option>Licenciatura en Educación Infantil</option>
+            <option>Medicina</option>
+            <option>Odontología</option>
+            <option>Tecnología en Atención Prehospitalaria</option>
+            <option>Tecnología en Estética</option>
+            <option>Tecnología Mecánica Dental</option>
+            <option>Trabajo Social</option>
+        </select>
+
+        <!-- Apartado de información personal -->
+        <h2>Información Personal *</h2>
+        <div class="row">
+            <div class="col">
+                <label for="firstName">Primer Nombre *</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="col">
+                <label for="secondName">Segundo Nombre</label>
+                <input type="text" id="secondName">
+            </div>
+            <div class="col">
+                <label for="firstLastName">Primer Apellido *</label>
+                <input type="text" id="firstLastName" required>
+            </div>
+            <div class="col">
+                <label for="secondLastName">Segundo Apellido</label>
+                <input type="text" id="secondLastName">
+            </div>
+            <div class="col">
+                <label for="birthDate">Fecha de Nacimiento *</label>
+                <input type="date" id="birthDate" required>
+                <small id="birthDateError" class="error"></small>
+            </div>
+            <div class="col">
+                <label for="docType">Tipo de Documento *</label>
+                <select id="docType" required>
+                    <option value="">Seleccione un tipo</option>
+                    <option>Cédula de Ciudadanía</option>
+                    <option>Pasaporte</option>
+                    <option>Tarjeta de Identidad</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="docNumber">Número de Documento *</label>
+                <input type="text" id="docNumber" required>
+            </div>
+            <div class="col">
+                <label for="sex">Sexo Biológico *</label>
+                <select id="sex" required>
+                    <option value="">Seleccione su sexo</option>
+                    <option>Masculino</option>
+                    <option>Femenino</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="maritalStatus">Estado Civil *</label>
+                <select id="maritalStatus" required>
+                    <option value="">Seleccione su estado</option>
+                    <option>Soltero</option>
+                    <option>Casado</option>
+                    <option>Unión Libre</option>
+                    <option>Divorciado</option>
+                    <option>Viudo</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="email">Correo Electrónico *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="col">
+                <label for="phone">Teléfono *</label>
+                <input type="text" id="phone" maxlength="10" required>
+                <small id="phoneError" class="error"></small>
+            </div>
+            <div class="col">
+                <label for="country">País *</label>
+                <input type="text" id="country" required>
+            </div>
+            <div class="col">
+                <label for="city">Ciudad *</label>
+                <input type="text" id="city" required>
+            </div>
+            <div class="col">
+                <label for="address">Dirección *</label>
+                <input type="text" id="address" required>
+            </div>
+        </div>
+
+        <!-- Encuesta Personal -->
+        <h2>Encuesta Personal *</h2>
+        <label for="children">¿Tiene hijos? *</label>
+        <select id="children" required>
+            <option value="">Seleccione una opción</option>
+            <option>No tengo</option>
+            <option>1 hijo</option>
+            <option>2 hijos</option>
+            <option>3 hijos</option>
+            <option>4 hijos</option>
+            <option>5 o más hijos</option>
+        </select>
+
+        <label for="population">¿Se reconoce con alguna población? *</label>
+        <select id="population" required>
+            <option value="">Seleccione una opción</option>
+            <option>Afrodescendiente</option>
+            <option>Indígena</option>
+            <option>Raizal</option>
+            <option>Palanquero</option>
+            <option>Rom (Gitano)</option>
+            <option>Otra</option>
+        </select>
+
+        <label for="disability">¿Cuenta con alguna discapacidad? *</label>
+        <select id="disability" required>
+            <option value="">Seleccione una opción</option>
+            <option>Ninguna</option>
+            <option>Discapacidad Motriz</option>
+            <option>Discapacidad Sorda</option>
+            <option>Discapacidad Cognitiva</option>
+            <option>Sordoceguera</option>
+            <option>Trastornos del habla</option>
+            <option>Otra</option>
+        </select>
+
+        <label for="works">¿Trabaja actualmente? *</label>
+        <select id="works" required>
+            <option value="">Seleccione una opción</option>
+            <option>No estoy trabajando</option>
+            <option>Empleado</option>
+            <option>Trabajo independiente</option>
+        </select>
+
+        <button type="submit" onclick="validateForm(event)">Enviar</button>
+    </div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let isValid = true;
+
+            const birthDate = document.getElementById('birthDate').value;
+            const birthDateError = document.getElementById('birthDateError');
+            const minDate = new Date();
+            minDate.setFullYear(minDate.getFullYear() - 16);
+
+            if (new Date(birthDate) > minDate) {
+                birthDateError.textContent = "Debe ser mayor de 16 años.";
+                isValid = false;
+            } else {
+                birthDateError.textContent = "";
+            }
+
+            if (isValid) alert("Formulario enviado con éxito");
+        }
+    </script>
+</body>
+</html>
